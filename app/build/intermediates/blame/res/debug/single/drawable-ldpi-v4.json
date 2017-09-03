@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/Arya/Desktop/P5_CraigsList_Skeleton/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_launcher.png",
+        "source": "/Users/Arya/Desktop/P5_CraigsList_Skeleton/app/src/main/res/drawable-ldpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Arya/Desktop/P5_CraigsList_Skeleton/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/bike.png",
+        "source": "/Users/Arya/Desktop/P5_CraigsList_Skeleton/app/src/main/res/drawable-ldpi/bike.png"
+    }
+]
