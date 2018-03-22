@@ -6,10 +6,14 @@ package com.example.listview;
  * with many optional fields
  */
 public class BikeData {
-    public static final int COMPANY = 0;
-    public static final int MODEL = 1;
-    public static final int PRICE = 2;
-    public static final int LOCATION = 3;
+    String COMPANY = "";
+    String MODEL = "";
+    Double PRICE;
+    String LOCATION = "";
+    String DESCRIPTION = "";
+    String DATE = "";
+    String PICTURE = "";
+    String LINK = "";
 
     //TODO make all BikeData fields final
 
@@ -20,12 +24,33 @@ public class BikeData {
     public String toString() {
         // TODO figure out how to print all bikedata out for dialogs
 
+        String a = "Company: "+ this.COMPANY;
+        String b = "Model: "+ this.MODEL;
+        String c = "Price: $"+ this.PRICE;
+        String d = "Location: "+ this.LOCATION;
+        String e = "Date Listed: "+ this.DATE;
+        String f = "Description "+ this.DESCRIPTION;
+        String g = "Link: "+ this.LINK;
 
-        return "TODO";
+        String last = a + "\n" +b+ "\n" + c +"\n"+d+"\n"+e+"\n"+f+"\n"+"g";
+
+        return last;
     }
 
     private BikeData(Builder b) {
         //TODO
+        this.COMPANY = b.Company;
+        this.MODEL = b.Model;
+        this.PRICE = b.Price;
+        this.LOCATION = b.Location;
+        this.DESCRIPTION = b.Description;
+        this.DATE = b.Date;
+        this.PICTURE = b.Picture;
+        this.LINK = b.Link;
+
+
+
+
     }
 
     /**
@@ -45,10 +70,15 @@ public class BikeData {
         String Link;
 
         // Model and price required
-        Builder(String Company, String Model, Double Price) {
+        Builder(String Company, String Model, Double Price,String Description,String Location, String Date, String Picture, String Link) {
             this.Company = Company;
             this.Model = Model;
             this.Price = Price;
+            this.Description = Description;
+            this.Location = Location;
+            this.Date = Date;
+            this.Picture = Picture;
+            this.Link = Link;
         }
 
         // the following are setters
@@ -56,26 +86,27 @@ public class BikeData {
         // makes it suitable for chaining
         Builder setDescription(String Description) {
             //TODO manage this
+            this.Description = Description;
             return this;
         }
 
         Builder setLocation(String Location) {
-
+            this.Location = Location;
             return this;
         }
 
         Builder setDate(String Date) {
-
+            this.Date = Date;
             return this;
         }
 
         Builder setPicture(String Picture) {
-
+            this.Picture = Picture;
             return this;
         }
 
         Builder setLink(String Link) {
-
+            this.Link = Link;
             return this;
         }
 

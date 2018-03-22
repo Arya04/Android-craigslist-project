@@ -118,6 +118,10 @@ public class DownloadTask extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         //TODO Your Stuff Here
+
+        if(myActivity != null){
+            myActivity.processJSON(result);
+        }
     }
 
     /*

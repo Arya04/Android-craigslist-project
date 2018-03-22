@@ -16,24 +16,25 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-    private static final String TAG = "DownloadTask";
+    private static final String TAG = "DownloadImageTask";
     private static final int DEFAULTBUFFERSIZE = 50;
     private static final int NODATA = -1;
 
     private String pictureID;
     private ImageView imageView;
     private Drawable placeholder;
+    private CustomAdapter.ViewHolder myVH;
+    private ImageView image;
+    private Activity_ListView activity;
 
-    public DownloadImageTask(String pictureID, ImageView imageView) {
-        this.pictureID = pictureID;
-        this.imageView = imageView;
-        Resources resources = imageView.getContext().getResources();
-        this.placeholder = resources.getDrawable(R.drawable.generic);
-    }
-
-    @Override
-    protected void onPreExecute() {
-        imageView.setImageDrawable(placeholder);
+    public DownloadImageTask(Activity_ListView myActivity, CustomAdapter.ViewHolder myVH) {
+        //this.pictureID = pictureID;
+        //this.imageView = imageView;
+        //Resources resources = imageView.getContext().getResources();
+        //this.placeholder = resources.getDrawable(R.drawable.generic);
+        this.myVH = myVH;
+        this.image = myVH.img;
+        activity = myActivity;
     }
 
     @Override
@@ -102,5 +103,9 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     @Override
     protected void onPostExecute(Bitmap result) {
         //TODO Your Stuff Here
+        myVH.img.setImageBitmap(result);
+       // activity.setupListViewOnClickListener();
+
+
     }
 }
